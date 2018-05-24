@@ -16,6 +16,19 @@ namespace ReplicadorScripts.WinForm
         {
             InitializeComponent();
             txtSeparador.Text = "/*end*/";
+            txtCabeceras.Text =
+                "USE BelcorpBolivia" + Environment.NewLine +
+                "USE BelcorpChile" + Environment.NewLine +
+                "USE BelcorpColombia" + Environment.NewLine +
+                "USE BelcorpCostaRica" + Environment.NewLine +
+                "USE BelcorpDominicana" + Environment.NewLine +
+                "USE BelcorpEcuador" + Environment.NewLine +
+                "USE BelcorpGuatemala" + Environment.NewLine +
+                "USE BelcorpMexico" + Environment.NewLine +
+                "USE BelcorpPanama" + Environment.NewLine +
+                "USE BelcorpPeru" + Environment.NewLine +
+                "USE BelcorpPuertoRico" + Environment.NewLine +
+                "USE BelcorpSalvador";
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
@@ -28,7 +41,11 @@ namespace ReplicadorScripts.WinForm
             for (int i = 0; i < cabeceras.Length; i++)
             {
                 resultado += cabeceras[i] + Environment.NewLine + contenido;
-                if (i != cabeceras.Length - 1) resultado += Environment.NewLine + separador + Environment.NewLine + Environment.NewLine;
+                if (i != cabeceras.Length - 1)
+                {
+                    if (!string.IsNullOrEmpty(separador)) resultado += Environment.NewLine + separador;
+                    resultado += Environment.NewLine + Environment.NewLine;
+                }
             }
             GuardarArchivo(resultado);
 
