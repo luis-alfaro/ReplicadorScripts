@@ -33,6 +33,7 @@ namespace ReplicadorScripts.WinForm
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
+            //comentario1
             string[] cabeceras = txtCabeceras.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             string contenido = txtContenido.Text;
             string separador = txtSeparador.Text;
