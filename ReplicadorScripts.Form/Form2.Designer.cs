@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtContenido = new System.Windows.Forms.TextBox();
             this.txtCabeceras = new System.Windows.Forms.TextBox();
             this.txtSeparador = new System.Windows.Forms.TextBox();
-            this.txtContenido = new System.Windows.Forms.TextBox();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +47,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // txtContenido
+            // 
+            this.txtContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtContenido.Location = new System.Drawing.Point(3, 16);
+            this.txtContenido.MaxLength = 1000000;
+            this.txtContenido.Multiline = true;
+            this.txtContenido.Name = "txtContenido";
+            this.txtContenido.Size = new System.Drawing.Size(442, 153);
+            this.txtContenido.TabIndex = 2;
+            // 
             // txtCabeceras
             // 
             this.txtCabeceras.Location = new System.Drawing.Point(13, 13);
@@ -61,15 +71,6 @@
             this.txtSeparador.Name = "txtSeparador";
             this.txtSeparador.Size = new System.Drawing.Size(174, 20);
             this.txtSeparador.TabIndex = 2;
-            // 
-            // txtContenido
-            // 
-            this.txtContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtContenido.Location = new System.Drawing.Point(3, 16);
-            this.txtContenido.Multiline = true;
-            this.txtContenido.Name = "txtContenido";
-            this.txtContenido.Size = new System.Drawing.Size(442, 153);
-            this.txtContenido.TabIndex = 2;
             // 
             // btnGenerar
             // 
