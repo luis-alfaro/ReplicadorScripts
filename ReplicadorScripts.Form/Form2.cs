@@ -12,6 +12,7 @@ namespace ReplicadorScripts.WinForm
 {
     public partial class Form2 : Form
     {
+		//Constructor
         public Form2()
         {
             InitializeComponent();
