@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ReplicadorScripts.WinForm
 {
@@ -15,7 +9,7 @@ namespace ReplicadorScripts.WinForm
         public Form2()
         {
             InitializeComponent();
-            txtSeparador.Text = "/*end*/";
+            txtSeparador.Text = "GO";
             txtCabeceras.Text =
                 "USE BelcorpBolivia" + Environment.NewLine +
                 "USE BelcorpChile" + Environment.NewLine +
@@ -36,17 +30,14 @@ namespace ReplicadorScripts.WinForm
             //comentario1
             string[] cabeceras = txtCabeceras.Text.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
             string contenido = txtContenido.Text;
-            string separador = txtSeparador.Text;
-            
+            string textoSeparador = txtSeparador.Text;
+            string separador = string.IsNullOrEmpty(textoSeparador) ? string.Empty : (Environment.NewLine + textoSeparador);
+
             string resultado = "";
             for (int i = 0; i < cabeceras.Length; i++)
             {
-                resultado += cabeceras[i] + Environment.NewLine + contenido;
-                if (i != cabeceras.Length - 1)
-                {
-                    if (!string.IsNullOrEmpty(separador)) resultado += Environment.NewLine + separador;
-                    resultado += Environment.NewLine + Environment.NewLine;
-                }
+                resultado += cabeceras[i] + separador + Environment.NewLine + contenido + separador;
+                if (i != cabeceras.Length - 1) resultado += Environment.NewLine + Environment.NewLine;
             }
             GuardarArchivo(resultado);
 
